@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Graph Editor</title>
+    <link rel="stylesheet" href="test.css">
+    <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+        <!-- control pannel of the graph iframe 
+          show/hide graph:
+          submit: send the graph information to the server
+      -->
+      <script type="text/javascript" src="jquery.js"></script>
+      <script type="text/javascript" src="jquery.blockUI.js"></script> <!-- use blockUI plugin to block a div -->
+	  <script type="text/javascript" src="test.js"></script>
+	  
+	  
+	  
+  </head>
+  
+  <body>
+    <header class="top">
+      <p>Top bar information: WSU</p>
+      <nav id="topnav">
+        <ul>
+          <li><a href="test.html">home</a></li>
+          <li><a href="testlink.html">testlink</a></li>
+          <li><a href="http://www.google.com">google</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="sidebar">
+      <nav id="leftnav">
+        <li><a href="">aaa</a></li>
+        <li><a href="">sss</a></li>
+        <li><a href="">ddd</a></li>
+      </nav>
+    </div>
+
+    <div class="main">
+
+      <div class="intro">
+        <p>Introduction...</p>
+        <p>blabla...</p>
+        <div class="video">
+          <p>here embeded a video:</p>
+          <object width="250" height="200">
+            <param name="movie" value="http://www.youtube.com/v/tIBxavsiHzM" />
+            <embed width="250" height="200" src="http://www.youtube.com/v/tIBxavsiHzM" type="application/x-shockwave-flash" allowfullscreen="true" />
+          </object>
+        </div>
+
+      </div>
+
+      <div class="graph">
+        <p>Graph Editor</p>
+
+        <div class="control"> <!-- control pannel -->
+          <button id="myshowhide">show/hide graph</button>
+          <button id="mysend">submit</button>
+          <button id="myreflesh">reflesh</button>
+        </div>
+
+        <div id="graphbox">
+          <link rel="stylesheet" type="text/css" href="graph.css">
+          <script type="text/javascript" src="graph.js"></script>
+        </div>
+
+      </div> <!-- end of graph -->
+
+      <div class="result" id="first">
+        <p>1st result</p>
+        <div class="resultbox" id="box1">
+          <link rel="stylesheet" type="text/css" href="result1.css">
+          <script type="text/javascript" src="result1.js"></script>
+        </div>
+      </div> <!-- end of div.first-->
+
+      <div class="result" id="second">
+        <p>2nd result</p>
+          <div class="resultbox" id="box2">
+            <link rel="stylesheet" type="text/css" href="result2.css">
+            <script type="text/javascript" src="result2.js"></script>
+          </div>
+      </div>
+
+      <div class="result" id="third">
+        <p>3rd result</p>
+          <div class="resultbox" id="box3">
+            <link rel="stylesheet" type="text/css" href="result3.css">
+            <script type="text/javascript" src="result3.js"></script>
+          </div>
+      </div>
+
+    </div> <!-- end of main -->
+
+
+   <div class="footarea">Footarea</div>
+
+  </body>
+
+</html>
