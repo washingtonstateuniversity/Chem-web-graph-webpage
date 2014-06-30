@@ -7,6 +7,10 @@ jQuery(document).ready(function() {
 	// first disable the graph editor and then send data to server
 	$('#mysend').on("click",function(){
 		$('#graphbox').block({message: '<h3>submitting</h3>'});
+		$.getJSON('/content/results.json?callback=?', {} , function(data){
+			alert(data);
+			$('#graphbox').block({message: '<h3>submitting</h3>'});
+		});
 	});//end of mysend 
 
 	$('#myreflesh').on("click",function(){
