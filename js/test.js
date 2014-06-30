@@ -10,6 +10,7 @@ jQuery(document).ready(function() {
 		$('#graphbox').block({message: '<h3>submitting</h3>'});
 		$.getJSON('content/return.json?callback=?', {} , function(data){
 			alert(data);
+			$('#graphbox').unblock();
 		});
 	});//end of mysend 
 
