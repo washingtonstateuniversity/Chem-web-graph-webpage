@@ -3,6 +3,12 @@
   <head>
     <title>Graph Editor</title>
     <link rel="stylesheet" href="css/test.css">
+	<link rel="stylesheet" type="text/css" href="css/graph.css">
+	<link rel="stylesheet" type="text/css" href="css/result1.css">
+	<link rel="stylesheet" type="text/css" href="css/result2.css">
+	<link rel="stylesheet" type="text/css" href="css/result3.css">
+	  
+	  
     <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     
@@ -13,8 +19,11 @@
       <script type="text/javascript" src="js/jquery.js"></script>
       <script type="text/javascript" src="js/jquery.blockUI.js"></script> <!-- use blockUI plugin to block a div -->
 	  <script type="text/javascript" src="js/test.js"></script>
-	  
-	  
+
+		<script type="text/javascript" src="js/graph.js"></script>
+		<script type="text/javascript" src="js/result1.js"></script>
+		<script type="text/javascript" src="js/result2.js"></script>
+		<script type="text/javascript" src="js/result3.js"></script>
 	  
   </head>
   
@@ -62,35 +71,23 @@
           <button id="myreflesh">reflesh</button>
         </div>
 
-        <div id="graphbox">
-          <link rel="stylesheet" type="text/css" href="css/graph.css">
-          <script type="text/javascript" src="js/graph.js"></script>
-        </div>
+        <div id="graphbox"></div>
 
       </div> <!-- end of graph -->
 
       <div class="result" id="first">
         <p>1st result</p>
-        <div class="resultbox" id="box1">
-          <link rel="stylesheet" type="text/css" href="css/result1.css">
-          <script type="text/javascript" src="js/result1.js"></script>
-        </div>
+        <div class="resultbox" id="box1"></div>
       </div> <!-- end of div.first-->
 
       <div class="result" id="second">
         <p>2nd result</p>
-          <div class="resultbox" id="box2">
-            <link rel="stylesheet" type="text/css" href="css/result2.css">
-            <script type="text/javascript" src="js/result2.js"></script>
-          </div>
+          <div class="resultbox" id="box2"></div>
       </div>
 
       <div class="result" id="third">
         <p>3rd result</p>
-          <div class="resultbox" id="box3">
-            <link rel="stylesheet" type="text/css" href="css/result3.css">
-            <script type="text/javascript" src="js/result3.js"></script>
-          </div>
+          <div class="resultbox" id="box3"></div>
       </div>
 
     </div> <!-- end of main -->
