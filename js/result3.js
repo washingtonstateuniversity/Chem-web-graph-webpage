@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	$.getJSON('content/return.json', function(data) {
+	$.getJSON('content/return.json?callback=?', function(data) {
 		/*optional stuff to do after success */
 
 	var bardata=data.result3; // get the third result
