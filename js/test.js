@@ -14,6 +14,21 @@ jQuery(document).ready(function() {
 		});
 	});//end of mysend 
 
+	$("[name='main_form'] input").on("change",function(e){
+		e.preventDefault();
+		var formData = $( "form[name='main_form']" ).serialize();
+		$('#graphbox').block({message: '<h3>submitting</h3>'});
+		$.getJSON('content/return.json', formData , function(data){
+			alert(data);
+			$('#graphbox').unblock();
+		});
+	});
+	
+	
+	
+	
+	
+	
 	$('#myreflesh').on("click",function(){
 	});//end of myreflesh
 });
