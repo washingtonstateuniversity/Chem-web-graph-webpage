@@ -1,3 +1,14 @@
+function reset_up_graph(){
+	
+	console.log("setting up the graph with new values");
+	
+}
+
+
+
+
+
+
 jQuery(document).ready(function() {
 	
 	
@@ -9,7 +20,7 @@ jQuery(document).ready(function() {
 	$('#mysend').on("click",function(){
 		$('#graphbox').block({message: '<h3>submitting</h3>'});
 		$.getJSON('content/return.json', {} , function(data){
-			alert(data);
+			reset_up_graph();
 			$('#graphbox').unblock();
 		});
 	});//end of mysend 
@@ -19,7 +30,7 @@ jQuery(document).ready(function() {
 		var formData = $( "form[name='main_form']" ).serialize();
 		$('#graphbox').block({message: '<h3>submitting</h3>'});
 		$.getJSON('content/return.json', formData , function(data){
-			alert(data);
+			reset_up_graph();
 			$('#graphbox').unblock();
 		});
 	});
