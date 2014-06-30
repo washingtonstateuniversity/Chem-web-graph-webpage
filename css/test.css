@@ -87,8 +87,8 @@ a:hover, a:active, a:focus {
 
 
 .control {
-	width: 50%;
-	height: 30px;
+	/*width: 50%;
+	height: 30px;*/
 	background-color: #FFF;
 	border: 2px solid blue;
 	margin: 10px;
