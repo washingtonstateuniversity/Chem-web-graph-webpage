@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-	$.getJSON('return.json', function(data) {
+	$.getJSON('content/return.json', function(data) {
 		/*optional stuff to do after success */
 
 	var bardata=data.result2;
