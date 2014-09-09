@@ -1,21 +1,26 @@
 jQuery(document).ready(function() {
 	$.getJSON('content/return.json', function(data) {
 		/*optional stuff to do after success */
+		
+	$.each(data.result2, function(i,ss){
+		var div_data = "<tr><td>"+ss.geodesics+"</td><td>"+ss.number+"</td></tr>";
+		$(div_data).appendTo('#table2');
+	});
 
-	var bardata=data.result2;
-	  console.log(bardata);
+	var bardata=data.result2; // get the third result
+	  //console.log(bardata);
 
 	var margin = {top: 40, right: 40, bottom: 40, left: 40},
-		width = 280 - margin.left - margin.right,
-		height = 200 - margin.top - margin.bottom;
+		width = 380 - margin.left - margin.right,
+		height = 300 - margin.top - margin.bottom;
 
 	var x = d3.scale.ordinal()
 	  .rangeRoundBands([0,width],0.5)
-	  .domain(bardata.map(function(d){return d.x}));
+	  .domain(bardata.map(function(d){return d.geodesics}));
 
 	var y = d3.scale.linear()
 	  .range([height, 0])
-	  .domain([0, d3.max(bardata, function(d){ return d.y})]);
+	  .domain([0, d3.max(bardata, function(d){ return d.number})]);
 
 	var xAxis = d3.svg.axis()
 		.scale(x)
@@ -46,10 +51,10 @@ jQuery(document).ready(function() {
 		.data(bardata)
 		.enter()
 		.append('rect')
-		.attr('x', function(d){ return x(d.x);}) // x position of the bar
-		.attr('y', function(d){ return y(d.y);})
+		.attr('x', function(d){ return x(d.geodesics);}) // x position of the bar
+		.attr('y', function(d){ return y(d.number);})
 		.attr('width', x.rangeBand()) // width of the bar
-		.attr('height', function(d){return height-y(d.y)})
+		.attr('height', function(d){return height-y(d.number)})
 		.attr('fill', 'grey')
 		.on('mouseover', function(d){d3.select(this).attr('fill', 'blue');})
 		.on('mouseout', function(d){d3.select(this).attr('fill', 'grey')});

@@ -1,24 +1,32 @@
 {
 	"number": 10,
+	"nodes": [
+		{"id": 0, "size": 10},
+		{"id": 1, "size": 8},
+		{"id": 2, "size": 10},
+		{"id": 3, "size": 12},
+		{"id": 4, "size": 8}
+	],
+	"links": [
+		{"source": 1, "target": 2},
+		{"source": 1, "target": 3},
+		{"source": 1, "target": 4},
+		{"source": 2, "target": 4},
+		{"source": 0, "target": 4}
+	],
 	"result1": [
-		{"degree":1, "percent":10},
-		{"degree":2, "percent":10},
-		{"degree":3, "percent":20},
-		{"degree":4, "percent":40},
-		{"degree":5, "percent":10},
-		{"degree":6, "percent":10}
+		{"degree": 1, "percent": 10},
+		{"degree": 2, "percent": 10},
+		{"degree": 3, "percent": 20},
+		{"degree": 4, "percent": 40},
+		{"degree": 5, "percent": 10},
+		{"degree": 6, "percent": 10}
 	],
 	"result2": [
-		{"x":1, "y":0.1},
-		{"x":2, "y":0.2},
-		{"x":3, "y":0.4},
-		{"x":4, "y":0.2},
-		{"x":5, "y":0.1}
-	],
-	"result3":[
-		{"geodesics":1, "number":60},
-		{"geodesics":2, "number":50},
-		{"geodesics":3, "number":20},
-		{"geodesics":4, "number":5}
-	]
+		{"geodesics": 1, "number": 60},
+		{"geodesics": 2, "number": 50},
+		{"geodesics": 3, "number": 20},
+		{"geodesics": 4, "number": 5}
+	]	
 }
+

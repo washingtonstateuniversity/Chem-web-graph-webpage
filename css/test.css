@@ -2,12 +2,13 @@ body {
 	margin: 50px;
 	color: #353535; 
 	font-size: 20px; 
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: Arial, Sans-serif;
 	background-color: #e6e5d7;
 }
 
 a {
     font-weight: bold;
+    text-decoration: none;
 }
 a:link {
     color: #FF6600;
@@ -17,20 +18,21 @@ a:visited {
 }
 a:hover, a:active, a:focus {
     color: #7F3300;
-    text-decoration: underline;
 }
 
 .top {
-	width: 70%;
-	height: 100px;
-	margin: 30px;
+	width: 90%;
+	height: 150px;
+	margin: 10px;
 	padding: 20px;
 	background-color: #FFF;
-	font-size: 20px;
+	font-size: 30px;
 }
 
-#topnav ul {
+ul {
 	list-style-type: none;
+	padding:20px;
+	margin:0px;
 }
 
 #topnav a {
@@ -40,8 +42,8 @@ a:hover, a:active, a:focus {
 }
 
 .sidebar {
-	width: 10%;
-	height: 960px;
+	width: 8%;
+	height:1200px;
 	display: block;
 	background-color: #FFF;
 	margin: 10px;
@@ -51,37 +53,38 @@ a:hover, a:active, a:focus {
 
 
 .main {
-	width: 80%;
-	height: 1000px;
+	width: 85%;
 	float: left;
 	padding: 10px;
 }
 
 .intro {
 	background-color: #FFF;
-	width: 300px;
-	height: 650px;
-	margin-right: 20px;
-	margin-bottom: 20px;
-	padding: 10px;
+	width:1080px;
+	height: 400px;
+	padding: 20px;
 	float: left;
 }
 
 .video {
-	padding: 10px;
+	padding: 20px;
+	width:300px;
 	border: 2px solid black;
 }
 
 .graph {
 	background-color: #FFF;
 	width: 520px;
-	height: 650px;
-	margin-bottom: 20px;
-	padding: 10px;
+	height: 1200px;
+	padding: 20px;
 	float: left;
 }
 
 #graphbox {
+	border: 5px solid grey;
+}
+
+#box3 {
 	border: 5px solid grey;
 }
 
@@ -92,20 +95,33 @@ a:hover, a:active, a:focus {
 	background-color: #FFF;
 	border: 2px solid blue;
 	margin: 10px;
-	padding: 5px;
+	padding: 10px;
 }
 
+
 .result {
-	width: 300px;
-	height: 300px;
+	width: 420px;
 	background-color: #FFF;
-	float: left;
 	padding: 10px;
+	margin-right: 10px;
+	margin-top: 10px;
+	display:none;
+}
+
+.graph p {
+	font-size: 15px;
+}
+
+.resulttable table, th, td{
+	width:200px;
+	border: 1px solid black;
 	margin: 10px;
+	font-size: 15px;
 }
 
 .resultbox {
 	border: 1px solid red;
+	margin: 10px;
 }
 
 .footarea {
@@ -113,7 +129,7 @@ a:hover, a:active, a:focus {
 	height: 20px;
 	background-color: #FFF;
 	margin: 20px;
-	padding: 10px;
+	padding: 20px;
 	float: left;
 }
 

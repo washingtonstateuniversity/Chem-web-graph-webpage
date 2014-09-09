@@ -2,12 +2,22 @@ jQuery(document).ready(function() {
 	$.getJSON('content/return.json', function(data) {
 		/*optional stuff to do after success */
 
+	//var div_data = "<table><tr><td>degree</td><td>percent</td></tr>";
+	//$(div_data).appendTo('#table1');
+	$.each(data.result1, function(i,ss){
+		var div_data = "<tr><td>"+ss.degree+"</td><td>"+ss.percent+"</td></tr>";
+		$(div_data).appendTo('#table1');
+	});
+	//div_data = "</table>";
+	//$(div_data).appendTo('#table1');
+
+
 	var bardata=data.result1;
-	  console.log(bardata);
+	  //console.log(bardata);
 
 	var margin = {top: 40, right: 40, bottom: 40, left: 40},
-		width = 280 - margin.left - margin.right,
-		height = 200 - margin.top - margin.bottom;
+		width = 380 - margin.left - margin.right,
+		height = 300 - margin.top - margin.bottom;
 
 	var x = d3.scale.ordinal()
 	  .rangeRoundBands([0,width],0.5)

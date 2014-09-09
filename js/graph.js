@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+
 	// set up SVG for D3
 	var width  = 500,
 		height = 400,
@@ -13,16 +14,18 @@ jQuery(document).ready(function() {
 	//  - nodes are known by 'id', not by index in array.
 	//  - reflexive edges are indicated on the node (as a bold black circle).
 	//  - links are always source < target; edge directions are set by 'left' and 'right'.
+
 	var nodes = [
-		{id: 0, reflexive: false},
-		{id: 1, reflexive: true },
-		{id: 2, reflexive: false}
-	  ],
-	  lastNodeId = 2,
+		{id: 0, size: 12},
+		{id: 1, size: 12},
+		{id: 2, size: 12}
+	  ]; 
+	var lastNodeId = 2,
 	  links = [
 		{source: nodes[0], target: nodes[1] },
 		{source: nodes[1], target: nodes[2] }
 	  ];
+
 	  //undirected graph
 
 	// init D3 force layout
@@ -122,10 +125,10 @@ jQuery(document).ready(function() {
 
 	  g.append('svg:circle')
 		.attr('class', 'node')
-		.attr('r', 12)
+		.attr('r', function(d){return d.size;})
 		.style('fill', function(d) { return (d === selected_node) ? d3.rgb(colors(d.id)).brighter().toString() : colors(d.id); })
 		.style('stroke', function(d) { return d3.rgb(colors(d.id)).darker().toString(); })
-		.classed('reflexive', function(d) { return d.reflexive; })
+		//.classed('reflexive', function(d) { return d.reflexive; })
 		.on('mouseover', function(d) {
 		  if(!mousedown_node || d === mousedown_node) return;
 		  // enlarge target node
@@ -172,11 +175,11 @@ jQuery(document).ready(function() {
 		  if(mousedown_node.id < mouseup_node.id) {
 			source = mousedown_node;
 			target = mouseup_node;
-			direction = 'right';
+			//direction = 'right';
 		  } else {
 			source = mouseup_node;
 			target = mousedown_node;
-			direction = 'left';
+			//direction = 'left';
 		  }
 
 		  var link;
@@ -223,7 +226,7 @@ jQuery(document).ready(function() {
 
 	  // insert new node at point
 	  var point = d3.mouse(this),
-		  node = {id: ++lastNodeId, reflexive: false};
+		  node = {id: ++lastNodeId, size:12};
 	  node.x = point[0];
 	  node.y = point[1];
 	  nodes.push(node);
@@ -280,7 +283,7 @@ jQuery(document).ready(function() {
 
 	  if(!selected_node && !selected_link) return;
 	  switch(d3.event.keyCode) {
-		case 8: // backspace
+		//case 8: // backspace
 		case 46: // delete
 		  if(selected_node) {
 			nodes.splice(nodes.indexOf(selected_node), 1);
@@ -315,4 +318,16 @@ jQuery(document).ready(function() {
 	  .on('keydown', keydown)
 	  .on('keyup', keyup);
 	restart();
-});
+
+
+// send the nodes and links information to server
+
+	var myarray = [];
+	myarray[0]={id:1,size:10};
+	myarray[1]={id:2,size:20};
+	var myjson = {};
+	myjson["nodes"]=myarray;
+	console.log(myjson);
+
+
+}); // end of document ready

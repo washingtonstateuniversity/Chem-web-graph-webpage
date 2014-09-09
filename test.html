@@ -1,30 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Graph Editor</title>
-    <link rel="stylesheet" href="css/test.css">
+    <title>Graph Webpage</title>
+  <link rel="stylesheet" type="text/css" href="css/test.css">
 	<link rel="stylesheet" type="text/css" href="css/graph.css">
 	<link rel="stylesheet" type="text/css" href="css/result1.css">
 	<link rel="stylesheet" type="text/css" href="css/result2.css">
 	<link rel="stylesheet" type="text/css" href="css/result3.css">
+
+
 	  
-	  
+	  <!--
 		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 		<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+  -->
 
-		<!-- control pannel of the graph iframe 
-		show/hide graph:
-		submit: send the graph information to the server
-		-->
+    <script type="text/javascript" src="js/d3.min.js"></script>
 		<script type="text/javascript" src="js/jquery.js"></script>
 		<script type="text/javascript" src="js/jquery.blockUI.js"></script> <!-- use blockUI plugin to block a div -->
 
-
+    <script type="text/javascript" src="js/test.js"></script>
 		<script type="text/javascript" src="js/graph.js"></script>
 		<script type="text/javascript" src="js/result1.js"></script>
 		<script type="text/javascript" src="js/result2.js"></script>
 		<script type="text/javascript" src="js/result3.js"></script>
-		<script type="text/javascript" src="js/test.js"></script>
 
   </head>
   
@@ -42,17 +41,18 @@
 
     <div class="sidebar">
       <nav id="leftnav">
-        <li><a href="">aaa</a></li>
-        <li><a href="">sss</a></li>
-        <li><a href="">ddd</a></li>
+        <ul>
+          <li><a href="">aaa</a></li>
+          <li><a href="">sss</a></li>
+          <li><a href="">ddd</a></li>
+        </ul>
       </nav>
     </div>
 
     <div class="main">
 
-      <div class="intro">
+<!--      <div class="intro">
         <p>Introduction...</p>
-        <p>blabla...</p>
         <div class="video">
           <p>here embeded a video:</p>
           <object width="250" height="200">
@@ -61,45 +61,67 @@
           </object>
         </div>
 
-      </div>
+      </div> 
+-->
 
       <div class="graph">
         <p>Graph Editor</p>
 
         <div class="control"> <!-- control pannel -->
+          <p style="font-size:15px; margin:0px;">this is a modified version of Directed Graph Editor from http://d3js.org</p>
           <button id="myshowhide">show/hide graph</button>
-          <button id="mysend">submit</button>
-          <button id="myreflesh">reflesh</button>
-			
-			<form name="main_form">
+          <button id="mysend">get results</button>  <!-- this will submit the graph information to server -->
+          <button id="mymodify">modify graph</button>
+	<!--		<form name="main_form">
 				<label>Option one</label>
 				<input type="number" name="test_item_1" /><br/>
 				
 				<label>Option one</label>
 				<input type="number" name="test_item_2" /><br/>
 			</form>
-			
-			
+		-->	
         </div>
 
         <div id="graphbox"></div>
 
       </div> <!-- end of graph -->
 
-      <div class="result" id="first">
-        <p>1st result</p>
-        <div class="resultbox" id="box1"></div>
-      </div> <!-- end of div.first-->
+      <div class="graph">
+        <p>Graph Analysis Results:</p>
+        <p>From the created graph, we can analyze the pagerank based on the connectivity, and topologic results like degrees, geodesics.</p>
+        <a id="showresult">see results...</a>
 
-      <div class="result" id="second">
-        <p>2nd result</p>
-          <div class="resultbox" id="box2"></div>
+        <div id="output">
+
+          <p>(1) the updated graph with radius of the node stands for pagerank</p>
+          <div id="box3"></div>
+
+
+          <p>(2) degree analysis: <a id="triggle1">show</a></p>
+          <div class="result" id="first">
+            <div class="resultbox" id="box1"></div>
+            <div class="resulttable" id="table1"></div>
+          </div>
+
+          <p>(3) geodesic analysis: <a id="triggle2">show</a></p>
+          <div class="result" id="second">
+            <div class="resultbox" id="box2"></div>
+            <div class="resulttable" id="table2"></div>
+          </div>
+
+
+      </div> <!-- end of "outp[ut" -->
+
       </div>
 
-      <div class="result" id="third">
+
+
+   <!--   <div class="result" id="third">
         <p>3rd result</p>
-          <div class="resultbox" id="box3"></div>
-      </div>
+        <div class="resultbox" id="box3"></div>
+        <p>pagerank</p>
+        <div class="resulttable" id="table3"></div>
+      </div> -->
 
     </div> <!-- end of main -->
 
